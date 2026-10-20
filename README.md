@@ -1,1 +1,142 @@
-Initializing
+# Repolex Knowledge Graph of PyMySQL/mysqlclient
+
+RDF knowledge graph data for [PyMySQL/mysqlclient](https://github.com/PyMySQL/mysqlclient), parsed by [repolex](https://repolex.ai).
+
+> **Note**: This data is experimental and subject to change without notice.
+
+## How to use this data
+
+The easiest way to get started is to install the [rlex](https://github.com/repolex-ai/rlex) query tool:
+
+```bash
+cargo install --git https://github.com/repolex-ai/rlex
+```
+
+Verify the install:
+
+```bash
+rlex --help
+```
+
+**rlex is designed to be used primarily by LLMs in a terminal.** Start up your favorite AI assistant and ask it to use rlex. It handles the SPARQL — you just ask questions in plain English.
+
+To load this repo's data:
+
+```bash
+rlex download PyMySQL/mysqlclient
+```
+
+Consult `rlex --help` for other options, including SPARQL queries, HTTP server, and interactive visualization.
+
+## Data structure
+
+All data is stored as gzip-compressed [N-Quads](https://www.w3.org/TR/n-quads/) (`.nq.gz`), a standard RDF format that can be loaded into any triplestore or graph database.
+
+```
+.
+├── aggregate
+│   ├── ast
+│   │   └── ff9e96da3f3e929933c40be6dafff9432c0df857
+│   │       └── chunk-001.nq.gz
+│   └── repolex
+│       └── ff9e96da3f3e929933c40be6dafff9432c0df857
+│           └── chunk-001.nq.gz
+├── blob
+│   ├── 00e6c7c0b95799c7b1e403b4c79af9866be8a95b.nq.gz
+│   ├── 014486d2d54794c2261812eda2933f990554b3a8.nq.gz
+│   ├── 0db7b4470e08cc5bfc59861377826da1e9fd2a01.nq.gz
+│   ├── 14c8f72c83cd7e3d178a637ab15b9c170a40c0b5.nq.gz
+│   ├── 1d6c942150f549f691f4598e464d2caf6bea3696.nq.gz
+│   ├── 1f081cc196ef796ea4c8825ed9febd149ba2c190.nq.gz
+│   ├── 2cfed8b2cb31de18ff13880b70ea64ad43b2392d.nq.gz
+│   ├── 2e3f0a0a57c9fd72002cc623102b3a8722ee48b0.nq.gz
+│   ├── 2f3fdafa9dbb22d26ef8977e9bc11b3a236bb4eb.nq.gz
+│   ├── 35f578ccfaf0e04019ac38ea76a7c6a225dad264.nq.gz
+│   ├── 39a2b6e9a55b8aaa96d0ee0e1c8f956c5c662e75.nq.gz
+│   ├── 39e3c2b1b03b14cef4a4aaed6b4fcfb46ed7879b.nq.gz
+│   ├── 3a9b2af5b0af03165800b42beb35333f9ac55c11.nq.gz
+│   ├── 3c4eca9f700dc44cacf7a39d6e1c2290aa4a5458.nq.gz
+│   ├── 3d297446c626a3b258a60fcfaf53c160ed8ffddd.nq.gz
+│   ├── 3f9ff8bbeb2b6d7f078bc5bdcc72843495b944af.nq.gz
+│   ├── 4480a3d31d635501349c2cfce1a35493bc7e5f2e.nq.gz
+│   ├── 48319f033a9cb0f69098cfe530504648c3bf10f8.nq.gz
+│   ├── 498be7cf13b88058de86b4b2445611505ef33d0d.nq.gz
+│   ├── 4c3fad896d51098d6425c47ca11385600cde4801.nq.gz
+│   ├── 4c585ce734b93f4f793fdc48bfa54a85a3ffa98f.nq.gz
+│   ├── 5693faa56ca2bdffd95e8de66d782259f11cbd2f.nq.gz
+│   ├── 58a996de389f3e2a60a274d1340cb5e62283b0a2.nq.gz
+│   ├── 5e6791d5580ec4580756a6389056f469bc854761.nq.gz
+│   ├── 6211b5327f68d627767abb751d715b43852c6169.nq.gz
+│   ├── 6724fcf8aeaef39e8848d53db9429ae082414a73.nq.gz
+│   ├── 6bf78bddf9e7071459c09ecea6341381087caf12.nq.gz
+│   ├── 6dfe1c6c7d41c0e80c6d03ba9f051fce056bdf88.nq.gz
+│   ├── 75814ec95f72dc3ed2f3e2490f280d4e3e88a6ab.nq.gz
+│   ├── 75d7a389a19f46efc8c77851d9703f3079f057af.nq.gz
+│   ├── 75f0c54144ccbc08d6f538b1ee8fb1355fedace4.nq.gz
+│   ├── 8208052162a0f3a214f7d9f389aef27bd36ecaed.nq.gz
+│   ├── 83c8a8f2ff306ec51b663a1e026218ea92dc61c6.nq.gz
+│   ├── 844516701bad8e89c7be5b6f8a8c6b12675391d4.nq.gz
+│   ├── 8b3509eda126844ad74b56f3139064ba3dd060b5.nq.gz
+│   ├── 91cebf04234f5f9793d65d712b5c2bea9f540053.nq.gz
+│   ├── 9467ae11e67388734339746bddd95b592383a567.nq.gz
+│   ├── 979148203b983d3cd72795f4f2ed9eba6cffa91b.nq.gz
+│   ├── 98847a6508afdceba43329d83161d103705bb771.nq.gz
+│   ├── 9bc2fd430884b960d9489d89b09da6a9cb498855.nq.gz
+│   ├── 9deedef3fdb1ad6d92e5d548b7166613ccdf8f01.nq.gz
+│   ├── 9f1273ed28a54d1b1b9f00333d7048de85df9604.nq.gz
+│   ├── a5aca7e147ad8db4d040f5324571b418e0c17aab.nq.gz
+│   ├── a6c12997c3e1032306df6c783d300e5b064cb610.nq.gz
+│   ├── a803e3e5757f274767d9606a2bf9d226283bd2a8.nq.gz
+│   ├── a920cb30ec7396bb6d2f7822ff5b75758a452074.nq.gz
+│   ├── aea9db71eec223eb115be2564168a2fee0be5d25.nq.gz
+│   ├── b5427a1a8ce8ea2c2d1fb8fcda0879fd804609ee.nq.gz
+│   ├── bab8524d892f1a035a9d85c30876706ba6c6d5e2.nq.gz
+│   ├── c2e93df428786c3054bef8c1eaa0adab9108ff90.nq.gz
+│   ├── c2e9b9c956e1390d6aaf21874aa9456a287fe649.nq.gz
+│   ├── cf8fe4e5970341f65ee0358a03fd5084ce9332f0.nq.gz
+│   ├── d159169d1050894d3ea3b98e1c965c4058208fe1.nq.gz
+│   ├── d20296d69eac548873cb1a5d50b88d65205940c3.nq.gz
+│   ├── d68ae372e90f9b466d9fbf8d2fd65f017cce5a62.nq.gz
+│   ├── da13dd252a6423715a0f93d918f92334ee55f64e.nq.gz
+│   ├── e06003ff82968cb2e2d1b279ab19eeb2e8fde1c2.nq.gz
+│   ├── e2546870911b1a3295f35e47a08dc6899a09b502.nq.gz
+│   ├── eb218ff7a9ba00f69b2e4cf7a96c79dc14ba41b7.nq.gz
+│   ├── fb99a1745d3a0ab8c7ed91f56d769861aafa5fad.nq.gz
+│   ├── fecb07dd6f041d2c8511e5d91fe17e3669db00cc.nq.gz
+│   ├── fefb2f12d3c149ad83ecbe9baf573116e9d64766.nq.gz
+│   └── ffe583fe40e18f777d6801e54dbcca84faa5e9f8.nq.gz
+├── branch
+│   └── branch.nq.gz
+├── commit
+│   └── commit.nq.gz
+├── filetree
+│   └── ff9e96da3f3e929933c40be6dafff9432c0df857.nq.gz
+├── issue
+│   └── issue.nq.gz
+├── pr
+│   └── pr.nq.gz
+└── tag
+    └── tag.nq.gz
+
+13 directories, 71 files
+```
+
+| Directory | What it contains |
+|-----------|-----------------|
+| `blob/` | Per-file AST graphs, content-addressed by git blob SHA. Each file in the source repo gets its own graph. |
+| `aggregate/ast/` | Combined AST graph per parsed commit. Merges all blob graphs for a snapshot of the entire codebase at that point. |
+| `aggregate/lsp/` | Language Server Protocol enrichment: resolved symbols, definitions, references, and type information. |
+| `aggregate/dataflow/` | Interprocedural data flow edges between functions and modules. |
+| `aggregate/repolex/` | Combined graph (AST + LSP + dataflow) per commit. |
+| `commit/` | Git commit metadata (author, date, message, parent links). |
+| `branch/` | Branch metadata. |
+| `tag/` | Tag metadata. |
+| `filetree/` | File tree snapshots per commit (which files existed and their blob SHAs). |
+| `audit/` | Code architecture and graph audit reports per commit. |
+
+## Source repository
+
+[PyMySQL/mysqlclient](https://github.com/PyMySQL/mysqlclient)
+
+---
+*Parsed on 2026-10-20 by [repolex](https://repolex.ai)*
